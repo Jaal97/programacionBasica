@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dibujando con tu Dedo</title>
+  </head>
+  <body>
+    <canvas width="1000" height="1000" id="area_de_dibujo"></canvas>
+    <p>Mueve tu dedo en la pantalla para dibujar</p>
+    <script type="text/javascript">
+
+      var cuadrito = document.getElementById("area_de_dibujo");
+      var papel = cuadrito.getContext("2d");
+      var x;
+      var y;
+      var dibujando = false;
+      var color = "green";
+
+      document.addEventListener("touchstart", evento =>
+      {
+        x = evento.touches[0].pageX;
+        y = evento.touches[0].pageY;
+        dibujando = true;
+      });
+
+      document.addEventListener("touchmove", evento =>
+      {
+        if (dibujando == true)
+        {
+          dibujarLinea(color, x - 10, y - 10, evento.touches[0].pageX - 10, evento.touches[0].pageY - 10, papel);
+          x = evento.touches[0].pageX;
+          y = evento.touches[0].pageY;
+        }
+      });
+
+      document.addEventListener("touchend", evento =>
+      {
+        dibujando = false;
+      });
+
+      dibujarLinea("red", x-1, y-1, x+1, y+1, papel);
+
+      function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo)
+      {
+        lienzo.beginPath();
+        lienzo.strokeStyle = color;
+        lienzo.lineWidth = 3;
+        lienzo.moveTo(xinicial, yinicial);
+        lienzo.lineTo(xfinal, yfinal);
+        lienzo.stroke();
+        lienzo.closePath();
+      }
+
+    </script>
+  </body>
+</html>

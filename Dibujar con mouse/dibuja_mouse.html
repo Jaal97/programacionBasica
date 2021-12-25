@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Dibuja con el mouse</title>
+  <style>
+    body
+    {
+      background-color: white;
+        color: black;
+        font-family: fantasy;
+
+    }
+    </style>
+  </head>
+  <body>
+    <h2>Vamos usa tu Mouse para dibujar</h2>
+    <p>Selecciona tu color favorito
+      <input type="color" id="seleccion_color" />
+    </p>
+    <p> Elije el tamaño de la linea
+      <input type="number" id="numer" />
+    </p>
+    <canvas width="800" height="600" id="area_dibujo"></canvas>
+    <button id="boton">GuardaDibujo</button>
+    <script src="dibuja_mouse.js"></script>
+    </body>
+</html>

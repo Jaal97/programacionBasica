@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Banco</title>
+</head>
+<style>
+    body
+    
+    {
+        background-color: aliceblue;
+        background-image: url("grupo.webp");
+        background-repeat: no-repeat;
+        background-position: center;
+        font-size: large;
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+
+</style>
+<body>
+    <h2>Realiza tu transacción</h2>
+    <p>Escribe tu nombre de usuario
+        <input type="text" id="user" /></p>
+    </p>
+    <p>Introduzca su contraseña 
+        <input type="password" id="pass" />
+    </p>
+    <p>
+        <input type="button" value="Ingresa" id="ingresa" />
+    </p>
+    <p>
+        Consulta tu saldo
+        <input type="button" value="Consultar" id="consulta" /> 
+    </p>
+    <p>Escribe tu Banco de destino
+        <input type="text" id="banco" />
+        <input type="button" value="Continua" id="selecBanco" />
+    </p>
+    <p>
+        Escribe numero de cuenta
+        <input type="text" id="cuenta" />
+    </p>
+    <p>
+        Monto a transferir
+        <input type="number" id="monto" />
+        <input type="button" value="Continua" id="selecCuenta" />
+    </p>
+    <p id="costo"></p>
+    <p id="ncuenta"></p>
+</br>
+<h3>Las transferencias a otros bancos tienen un costo del 5% del total de la transacción</h3>
+</body>
+    </body>
+    <script src="verificacion.js"></script>
+</body>
+
+</html>
